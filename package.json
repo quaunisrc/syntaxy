@@ -12,9 +12,9 @@
     "node": ">=22.9.0",
     "npm": ">=10.9.3"
   },
-  "engineStrict": true,
   "scripts": {
-    "lint": "eslint . --fix",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
     "build:core": "npm run build -w @syntaxy/core",
     "dev:core": "npm run dev -w @syntaxy/core"
