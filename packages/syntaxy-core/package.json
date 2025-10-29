@@ -1,0 +1,44 @@
+{
+  "name": "@syntaxy/core",
+  "version": "0.1.0",
+  "description": "Core engine and plugins for the Syntaxy rich-text editor.",
+  "author": "Quauni",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/syntaxy-core.umd.js",
+  "module": "./dist/syntaxy-core.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/syntaxy-core.es.js",
+      "require": "./dist/syntaxy-core.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "keywords": [
+    "syntaxy",
+    "lexical",
+    "lexicaljs",
+    "editor",
+    "text editor",
+    "rich text",
+    "rich text editor",
+    "wysiwyg",
+    "headless",
+    "framework-agnostic",
+    "contenteditable"
+  ],
+  "devDependencies": {
+    "lexical": "^0.38.1"
+  },
+  "peerDependencies": {
+    "lexical": ">=0.38.1"
+  }
+}

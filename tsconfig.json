@@ -1,0 +1,7 @@
+{
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "files": [],
+  "references": [{ "path": "packages/syntaxy-core" }]
+}

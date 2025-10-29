@@ -1,0 +1,35 @@
+{
+  "name": "@syntaxy/monorepo",
+  "version": "0.1.0",
+  "description": "Syntaxy aims to become the best JavaScript rich-text editor.",
+  "author": "Quauni",
+  "license": "MIT",
+  "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
+  "engines": {
+    "node": ">=22.9.0",
+    "npm": ">=10.9.3"
+  },
+  "engineStrict": true,
+  "scripts": {
+    "lint": "eslint . --fix",
+    "format": "prettier --write .",
+    "build:core": "npm run build -w @syntaxy/core",
+    "dev:core": "npm run dev -w @syntaxy/core"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "@types/node": "^24.9.2",
+    "eslint": "^9.38.0",
+    "eslint-config-prettier": "^10.1.8",
+    "globals": "^16.4.0",
+    "jiti": "^2.6.1",
+    "prettier": "^3.6.2",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.46.2",
+    "vite": "^7.1.12",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
