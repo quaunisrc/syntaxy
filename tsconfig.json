@@ -3,5 +3,9 @@
     "noEmit": true
   },
   "files": [],
-  "references": [{ "path": "packages/syntaxy-core" }]
+  "references": [
+    { "path": "packages/syntaxy-core" },
+    { "path": "packages/syntaxy-vanilla" },
+    { "path": "packages/syntaxy-playground" }
+  ]
 }
