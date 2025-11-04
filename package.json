@@ -18,8 +18,6 @@
     "format": "prettier --write .",
     "build:core": "npm run build -w @syntaxy/core",
     "dev:core": "npm run dev -w @syntaxy/core",
-    "build:vanilla": "npm run build -w @syntaxy/vanilla",
-    "dev:vanilla": "npm run dev -w @syntaxy/vanilla",
     "build:playground": "npm run build -w @syntaxy/playground",
     "dev:playground": "npm run dev -w @syntaxy/playground"
   },
