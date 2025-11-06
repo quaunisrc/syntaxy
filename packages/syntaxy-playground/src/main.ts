@@ -1,3 +1,3 @@
-import { createToolbar } from '@syntaxy/vanilla';
+import { createEditor } from '@syntaxy/core';
 
-createToolbar();
+createEditor();
