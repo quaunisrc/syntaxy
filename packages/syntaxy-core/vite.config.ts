@@ -17,13 +17,10 @@ export default defineConfig({
       fileName: (format) => `syntaxy-core.${format}.js`,
     },
     rollupOptions: {
-      external: ['lexical', /@lexical\/.*/],
+      external: ['lexical'],
       output: {
-        // Provide global variables to use in the UMD build
-        // for externalized deps
         globals: {
           lexical: 'Lexical',
-          // Add mappings for any @lexical subpackages if needed
         },
       },
     },
