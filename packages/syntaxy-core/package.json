@@ -36,9 +36,12 @@
     "contenteditable"
   ],
   "devDependencies": {
-    "lexical": "^0.38.1"
+    "lexical": "^0.38.2"
   },
   "peerDependencies": {
-    "lexical": ">=0.38.1"
+    "lexical": ">=0.38.2"
+  },
+  "dependencies": {
+    "@lexical/rich-text": "^0.38.2"
   }
 }

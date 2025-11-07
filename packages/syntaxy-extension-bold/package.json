@@ -1,0 +1,33 @@
+{
+  "name": "@syntaxy/extension-bold",
+  "version": "0.1.0",
+  "description": "Bold extension for the Syntaxy rich-text editor.",
+  "author": "Quauni",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/syntaxy-extension-bold.umd.js",
+  "module": "./dist/syntaxy-extension-bold.es.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/syntaxy-extension-bold.es.js",
+      "require": "./dist/syntaxy-extension-bold.umd.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "vite build",
+    "dev": "vite build --watch"
+  },
+  "devDependencies": {
+    "@syntaxy/core": "^0.1.0",
+    "lexical": "^0.38.2"
+  },
+  "peerDependencies": {
+    "@syntaxy/core": ">=0.1.0",
+    "lexical": ">=0.38.2"
+  }
+}

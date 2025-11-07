@@ -1,6 +1,7 @@
 import { createEditor, LexicalEditor } from 'lexical';
 import { AnyExtensions, UnionCommands, UnionState } from './SyntaxyExtension';
 import { SyntaxyEditorBase } from './SyntaxyTypes';
+import { registerRichText } from '@lexical/rich-text';
 
 type EditorEventCallback = () => void;
 
@@ -20,8 +21,15 @@ export class SyntaxyEditor<TExtensions extends AnyExtensions>
 
     const lexicalNodes = this.#extensions.flatMap((ext) => ext.nodes || []);
     this.#lexicalEditor = createEditor({
+      namespace: 'SyntaxyEditor',
       nodes: lexicalNodes,
+      onError: console.error,
     });
+
+    const unregisterRichText = registerRichText(this.#lexicalEditor);
+    if (unregisterRichText) {
+      this.#lexicalUnregisterCallbacks.push(unregisterRichText);
+    }
 
     // eslint-disable-next-line
     const commands = {} as any;
@@ -49,36 +57,21 @@ export class SyntaxyEditor<TExtensions extends AnyExtensions>
     this.commands = commands;
     this.state = state;
 
-    this.#lexicalEditor.registerUpdateListener(
-      ({ dirtyElements, dirtyLeaves }) => {
-        this.#emit('update');
-
-        const selectionChanged =
-          dirtyElements.has('root') || dirtyLeaves.size > 0;
-
-        if (selectionChanged) {
-          this.#emit('selectionUpdate');
-        }
-      },
-    );
+    this.#lexicalEditor.registerUpdateListener(() => {
+      this.#emit('update');
+    });
   }
 
   #emit(event: string) {
     this.#listeners[event]?.forEach((cb) => cb());
   }
 
-  public on(
-    event: 'update' | 'selectionUpdate' | string,
-    callback: EditorEventCallback,
-  ) {
+  public on(event: 'update', callback: EditorEventCallback) {
     this.#listeners[event] = this.#listeners[event] || [];
     this.#listeners[event].push(callback);
   }
 
-  public off(
-    event: 'update' | 'selectionUpdate' | string,
-    callback: EditorEventCallback,
-  ) {
+  public off(event: 'update', callback: EditorEventCallback) {
     this.#listeners[event] = this.#listeners[event]?.filter(
       (cb) => cb !== callback,
     );

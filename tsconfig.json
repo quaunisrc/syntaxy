@@ -5,6 +5,7 @@
   "files": [],
   "references": [
     { "path": "packages/syntaxy-core" },
+    { "path": "packages/syntaxy-extension-bold" },
     { "path": "packages/syntaxy-playground" }
   ]
 }

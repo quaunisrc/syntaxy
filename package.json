@@ -16,8 +16,10 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier --write .",
+    "dev:core": "npm run dev -w @syntaxy/extension-bold",
     "build:core": "npm run build -w @syntaxy/core",
-    "dev:core": "npm run dev -w @syntaxy/core",
+    "dev:extension-bold": "npm run dev -w @syntaxy/extension-bold",
+    "build:extension-bold": "npm run build -w @syntaxy/extension-bold",
     "build:playground": "npm run build -w @syntaxy/playground",
     "dev": "npm run dev -w @syntaxy/playground"
   },

@@ -1,0 +1,1 @@
+export { SyntaxyExtensionBold } from './SyntaxyExtensionBold.';
